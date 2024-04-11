@@ -8,7 +8,7 @@ local UILib = {}
 
 local DisableExperimentalDragging = true
 local DisableMovementRotation = true
-local MovementTweenTime = 0.05
+local MovementTweenTime = 0.025
 local isUsingSlider = false
 
 -- Original Sizes
@@ -46,8 +46,6 @@ function UILib:CreateUI()
 	local sectionedElements = {}
 	local dropdownFrames = {}
 	local oldSizes = {}
-
-
 	local isDragging = false
 	local lastMousePosition = nil
 	local tiltSpeed = 0.1 
@@ -71,7 +69,6 @@ function UILib:CreateUI()
 		end
 	end
 
-
 	local Constraint = Instance.new("Frame")
 
 	function Window:Destroy()
@@ -92,12 +89,14 @@ function UILib:CreateUI()
 	local ImageLabel = Instance.new("ImageLabel")
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
-	--local AccountSec = Instance.new("Frame")
+	--[[
+	local AccountSec = Instance.new("Frame")
 	local UICorner_5 = Instance.new("UICorner")
 	local ImageLabel_2 = Instance.new("ImageLabel")
 	local UICorner_6 = Instance.new("UICorner")
 	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 	local TextLabel = Instance.new("TextLabel")
+	]]--
 	local TextLabel_2 = Instance.new("TextLabel")
 	local MainSection = Instance.new("Frame")
 
@@ -243,6 +242,7 @@ function UILib:CreateUI()
 
 	UIListLayout.Parent = ScrollingFrame
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
 	--[[
 	AccountSec.Name = "AccountSec"
 	AccountSec.Parent = Sidebar
