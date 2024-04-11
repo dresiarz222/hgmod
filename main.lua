@@ -92,7 +92,7 @@ function UILib:CreateUI()
 	local ImageLabel = Instance.new("ImageLabel")
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
-	local AccountSec = Instance.new("Frame")
+	--local AccountSec = Instance.new("Frame")
 	local UICorner_5 = Instance.new("UICorner")
 	local ImageLabel_2 = Instance.new("ImageLabel")
 	local UICorner_6 = Instance.new("UICorner")
@@ -243,7 +243,7 @@ function UILib:CreateUI()
 
 	UIListLayout.Parent = ScrollingFrame
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
+	--[[
 	AccountSec.Name = "AccountSec"
 	AccountSec.Parent = Sidebar
 	AccountSec.AnchorPoint = Vector2.new(0.5, 1)
@@ -274,7 +274,7 @@ function UILib:CreateUI()
 			ImageLabel_2.BackgroundColor3 = Color3.fromRGB(30,30,30)
 		end
 	end)
-
+	
 	UICorner_6.Parent = ImageLabel_2
 	UICorner_6.CornerRadius = UDim.new(1, 0)
 
@@ -294,8 +294,6 @@ function UILib:CreateUI()
 	TextLabel.TextScaled = true
 	TextLabel.TextSize = 14
 	TextLabel.TextWrapped = true
-
-    --[[
 	TextLabel_2.Parent = AccountSec
 	TextLabel_2.AnchorPoint = Vector2.new(0.5, 0)
 	TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
