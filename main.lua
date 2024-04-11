@@ -212,7 +212,7 @@ function UILib:CreateUI()
 	ImageLabel.BorderSizePixel = 0
 	ImageLabel.Position = UDim2.new(0.155485526, 0, 0.0275019091, 0)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
-	ImageLabel.Image = getcustomasset("dougware/bg.png")
+	ImageLabel.Image = getcustomasset("dougware/thumbnail.png")
 	
 	local ScrollHolder = Instance.new("Frame")
 	ScrollHolder.Parent = Sidebar
