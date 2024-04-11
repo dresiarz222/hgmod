@@ -212,12 +212,15 @@ function UILib:CreateUI()
 	ImageLabel.BorderSizePixel = 0
 	ImageLabel.Position = UDim2.new(0.155485526, 0, 0.0275019091, 0)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
-	ImageLabel.Image = getcustomasset("dougware/frames/1.png")
+	local frames = {}
+	for i=1,5 do
+		frames[i] = getcustomasset(string.format("dougware/frames/%s.png",i))
+	end
 	task.spawn(function()
 		while task.wait() do
-			for i=1,5 do
+			for i,v in frames do
 				task.wait(0.05)
-				ImageLabel.Image = getcustomasset(string.format("dougware/frames/%s.png",i))
+				ImageLabel.Image = frames[i]
 			end	
 		end
 	end)
