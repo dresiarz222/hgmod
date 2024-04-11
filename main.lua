@@ -219,7 +219,7 @@ function UILib:CreateUI()
 	task.spawn(function()
 		while task.wait() do
 			for i,v in frames do
-				task.wait(0.05)
+				task.wait(0.1)
 				ImageLabel.Image = frames[i]
 			end	
 		end
