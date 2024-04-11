@@ -8,7 +8,7 @@ local UILib = {}
 
 local DisableExperimentalDragging = true
 local DisableMovementRotation = true
-local MovementTweenTime = 0.025
+local MovementTweenTime = 0.045
 local isUsingSlider = false
 
 -- Original Sizes
