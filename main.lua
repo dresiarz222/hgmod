@@ -5,10 +5,10 @@
 -- FCU
 
 local UILib = {}
-
+local userInputService = game:GetService("UserInputService")
 local DisableExperimentalDragging = true
 local DisableMovementRotation = true
-local MovementTweenTime = 0.045
+local MovementTweenTime = 0.035
 local isUsingSlider = false
 
 -- Original Sizes
@@ -37,7 +37,7 @@ local function CalculateSize(Frame, List, Scale) -- ACS For Scaling, Don't ask o
 	return YSize/Scale + (10)
 end
 
-function UILib:CreateUI()
+function UILib:CreateUI(toggleKeyCode)
 	local Window = {
 		tabs = {}
 	}
@@ -53,6 +53,12 @@ function UILib:CreateUI()
 
 	local HugeUI = Instance.new("ScreenGui")
 	HugeUI.ResetOnSpawn = false
+
+	userInputService.InputBegan:Connect(function(input, _gameProcessed)
+		if input == toggleKeyCode and (not _gameProcessed) then
+			HugeUI.Enabled = not HugeUI.Enabled
+		end	
+	end)
 
 	local Scaleable = Instance.new("UIScale", HugeUI)
 	Scaleable.Scale = 1 -- Changing breaks ACS
