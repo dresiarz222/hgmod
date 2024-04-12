@@ -8,7 +8,7 @@ local UILib = {}
 local userInputService = game:GetService("UserInputService")
 local DisableExperimentalDragging = true
 local DisableMovementRotation = true
-local MovementTweenTime = 0.1
+local MovementTweenTime = 0.15
 local isUsingSlider = false
 
 -- Original Sizes
