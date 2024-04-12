@@ -47,7 +47,7 @@ function UILib:CreateUI(toggleKeyCode)
 	local oldSizes = {}
 	local isDragging = false
 	local lastMousePosition = nil
-	local tiltSpeed = 0.1 
+	local tiltSpeed = 0.125 
 	local maxTiltAngle = 10 
 
 	local HugeUI = Instance.new("ScreenGui")
