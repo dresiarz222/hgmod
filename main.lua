@@ -54,7 +54,7 @@ function UILib:CreateUI(toggleKeyCode)
 	HugeUI.ResetOnSpawn = false
 
 	userInputService.InputBegan:Connect(function(input, _gameProcessed)
-		if input == toggleKeyCode and (not _gameProcessed) then
+		if input.KeyCode == toggleKeyCode and (not _gameProcessed) then
 			HugeUI.Enabled = not HugeUI.Enabled
 		end	
 	end)
