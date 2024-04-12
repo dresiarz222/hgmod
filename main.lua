@@ -22,7 +22,6 @@ local Section_MainLabelSize = UDim2.new(0, 290, 0, 25)
 local BaseItemSize_Nested = UDim2.new(0, 250, 0, 30)
 local Mult = 0.9
 
-
 local function CalculateSize(Frame, List, Scale) -- ACS For Scaling, Don't ask ok.f
 	local Scale = Scale or 1
 	local YSize = 0
