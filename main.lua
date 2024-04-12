@@ -8,7 +8,7 @@ local UILib = {}
 local userInputService = game:GetService("UserInputService")
 local DisableExperimentalDragging = true
 local DisableMovementRotation = true
-local MovementTweenTime = 0.035
+local MovementTweenTime = 0.1
 local isUsingSlider = false
 
 -- Original Sizes
@@ -52,13 +52,11 @@ function UILib:CreateUI(toggleKeyCode)
 
 	local HugeUI = Instance.new("ScreenGui")
 	HugeUI.ResetOnSpawn = false
-
 	userInputService.InputBegan:Connect(function(input, _gameProcessed)
 		if input.KeyCode == toggleKeyCode and (not _gameProcessed) then
 			HugeUI.Enabled = not HugeUI.Enabled
 		end	
 	end)
-
 	local Scaleable = Instance.new("UIScale", HugeUI)
 	Scaleable.Scale = 1 -- Changing breaks ACS
 
