@@ -36,7 +36,7 @@ local function CalculateSize(Frame, List, Scale) -- ACS For Scaling, Don't ask o
 	return YSize/Scale + (10)
 end
 
-function UILib:CreateUI(toggleKeyCode)
+function UILib:CreateUI(toggleKeyCode,logoFramesPath,bgPath)
 	local Window = {
 		tabs = {}
 	}
@@ -176,7 +176,7 @@ function UILib:CreateUI(toggleKeyCode)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
 	Background.BorderSizePixel = 0
 	Background.Size = UDim2.new(1, 0, 1, 0)
-	Background.Image = getcustomasset("dougware/bg.png")
+	Background.Image = getcustomasset(bgPath,true)
 
 	UICorner_2.Parent = Background
 
@@ -217,7 +217,7 @@ function UILib:CreateUI(toggleKeyCode)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
 	local frames = {}
 	for i=1,5 do
-		frames[i] = getcustomasset(string.format("dougware/frames/%s.png",i))
+		frames[i] = getcustomasset(string.format(logoFramesPath.."/%s.jpg",i),true)
 	end
 	task.spawn(function()
 		while task.wait() do
