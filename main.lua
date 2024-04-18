@@ -1290,7 +1290,7 @@ function UILib:CreateUI(toggleKeyCode)
 				TextBox.BorderSizePixel = 0
 				TextBox.Size = UDim2.new(1, 0, 1, 0)
 				TextBox.Font = Enum.Font.FredokaOne
-				TextBox.PlaceholderText = "Placeholder"
+				TextBox.PlaceholderText = "Type..."
 				TextBox.Text = ""
 				TextBox.TextColor3 = Color3.new(1, 1, 1)
 				TextBox.TextScaled = true
