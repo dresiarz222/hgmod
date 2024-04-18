@@ -176,7 +176,7 @@ function UILib:CreateUI(toggleKeyCode,logoFramesPath,bgPath)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
 	Background.BorderSizePixel = 0
 	Background.Size = UDim2.new(1, 0, 1, 0)
-	Background.Image = getcustomasset("dougware/dgwbg.png")
+	Background.Image = getcustomasset("dougware/dgwbg.jpg")
 
 	UICorner_2.Parent = Background
 
