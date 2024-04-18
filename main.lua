@@ -36,7 +36,7 @@ local function CalculateSize(Frame, List, Scale) -- ACS For Scaling, Don't ask o
 	return YSize/Scale + (10)
 end
 
-function UILib:CreateUI(toggleKeyCode,logoFramesPath,bgPath)
+function UILib:CreateUI(toggleKeyCode)
 	local Window = {
 		tabs = {}
 	}
