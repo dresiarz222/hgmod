@@ -177,7 +177,7 @@ function UILib:CreateUI(toggleKeyCode)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
 	Background.BorderSizePixel = 0
 	Background.Size = UDim2.new(1, 0, 1, 0)
-	Background.Image = getcustomasset("ponyclient/bg.png")
+	Background.Image = "rbxassetid://17579828997"
 
 	UICorner_2.Parent = Background
 
@@ -216,7 +216,7 @@ function UILib:CreateUI(toggleKeyCode)
 	ImageLabel.BorderSizePixel = 0
 	ImageLabel.Position = UDim2.new(0.155485526, 0, 0.0275019091, 0)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
-	ImageLabel.Image = getcustomasset("ponyclient/logo.jpg")
+	ImageLabel.Image = "rbxassetid://17581224266"
 
 	local ScrollHolder = Instance.new("Frame")
 	ScrollHolder.Parent = Sidebar
