@@ -4,6 +4,74 @@
 -- discord.gg/hugegames
 -- FCU
 
+local TweenService = cloneref(game:GetService("TweenService"))
+
+local ponyBgs = {
+	"https://files.catbox.moe/kk24r5.png",
+	"https://files.catbox.moe/859um2.jpg",
+	"https://files.catbox.moe/2m655r.jpg",
+	"https://files.catbox.moe/q6cgen.jpg",
+	"https://files.catbox.moe/q8v91u.jpg",
+	"https://files.catbox.moe/m69p0r.jpg",
+}
+
+local links = {
+	cod = "https://files.catbox.moe/pdtjrs.wav",
+	coin = "https://files.catbox.moe/a7mc2i.wav",
+	skeet = "https://files.catbox.moe/lc9xn9.wav",
+	bg = ponyBgs[math.random(1,6)], -- random pony
+	logo = "https://files.catbox.moe/3giqnn.png"
+}
+
+function checkFile(path, link)
+	if not isfile(path) then
+        writefile(path,game:HttpGet(link))
+	end
+end
+
+function checkFolder(path)
+	if not isfolder(path) then
+        makefolder(path)
+	end
+end
+
+function downloadAssets()
+	
+    checkFolder("ponyclient")
+
+	checkFile("ponyclient/logo.png", links.logo)
+
+end
+
+local blurEffect
+
+function blurScreen(bool)
+	if bool then
+		local camera = workspace.CurrentCamera
+		blurEffect = Instance.new("BlurEffect")
+		blurEffect.Parent = camera
+		blurEffect.Size = 0
+		blurEffect.Enabled = true
+		local fadeInTweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+		local fadeInTween = TweenService:Create(blurEffect, fadeInTweenInfo, {Size = 20})
+		fadeInTween:Play()
+	else
+		local fadeOutTweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+		local fadeOutTween = TweenService:Create(blurEffect, fadeOutTweenInfo, {Size = 0})
+		fadeOutTween:Play()
+		fadeOutTween.Completed:Wait()
+		blurEffect:Destroy()
+	end
+end
+
+task.spawn(blurScreen, true)
+if isfile("ponyclient/bg.png") then
+	delfile("ponyclient/bg.png")
+end
+checkFile("ponyclient/bg.png",links.bg)
+local success, msg = pcall(downloadAssets)
+task.spawn(blurScreen, false)
+
 local UILib = {}
 local userInputService = game:GetService("UserInputService")
 local DisableExperimentalDragging = true
@@ -177,7 +245,7 @@ function UILib:CreateUI(toggleKeyCode)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
 	Background.BorderSizePixel = 0
 	Background.Size = UDim2.new(1, 0, 1, 0)
-	Background.Image = "rbxassetid://17579828997"
+	Background.Image = getcustomasset("ponyclient/bg.png", true)
 
 	UICorner_2.Parent = Background
 
@@ -216,7 +284,7 @@ function UILib:CreateUI(toggleKeyCode)
 	ImageLabel.BorderSizePixel = 0
 	ImageLabel.Position = UDim2.new(0.155485526, 0, 0.0275019091, 0)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
-	ImageLabel.Image = "rbxassetid://17581224266"
+	ImageLabel.Image = getcustomasset("ponyclient/logo.png",true)
 
 	local ScrollHolder = Instance.new("Frame")
 	ScrollHolder.Parent = Sidebar
