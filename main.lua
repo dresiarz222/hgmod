@@ -10,6 +10,7 @@ local DisableExperimentalDragging = true
 local DisableMovementRotation = true
 local MovementTweenTime = 0.15
 local isUsingSlider = false
+local hotpink = Color3.fromRGB(236,5,142)
 
 -- Original Sizes
 
@@ -176,7 +177,7 @@ function UILib:CreateUI(toggleKeyCode)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
 	Background.BorderSizePixel = 0
 	Background.Size = UDim2.new(1, 0, 1, 0)
-	Background.Image = getcustomasset("dougware/dgwbg.jpg",true)
+	Background.Image = getcustomasset("dougware/bg.jpg",true)
 
 	UICorner_2.Parent = Background
 
@@ -216,7 +217,7 @@ function UILib:CreateUI(toggleKeyCode)
 	ImageLabel.Position = UDim2.new(0.155485526, 0, 0.0275019091, 0)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
 	ImageLabel.Image = getcustomasset("dougware/logo.jpg")
-	
+
 	local ScrollHolder = Instance.new("Frame")
 	ScrollHolder.Parent = Sidebar
 	ScrollHolder.Active = true
@@ -363,7 +364,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 		TabButton.Name = "TabButton"
 		TabButton.Parent = ScrollingFrame
-		TabButton.BackgroundColor3 = Color3.new(0, 0.607843, 1)
+		TabButton.BackgroundColor3 = hotpink
 		TabButton.BorderColor3 = Color3.new(0, 0, 0)
 		TabButton.BorderSizePixel = 0
 		TabButton.Size = UDim2.new(1, 0, 0.25, 0)
@@ -819,7 +820,7 @@ function UILib:CreateUI(toggleKeyCode)
 					
 					Frame.MouseEnter:Connect(function()
 						isHovering = true
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 					end)
 					Frame.MouseLeave:Connect(function()
 						isHovering = false
@@ -829,7 +830,7 @@ function UILib:CreateUI(toggleKeyCode)
 					Frame.InputBegan:Connect(function(Input)
 						if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 							Debounce = true
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 							Frame:TweenSize(
 								UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 								Enum.EasingDirection.Out,
@@ -1050,7 +1051,7 @@ function UILib:CreateUI(toggleKeyCode)
 					NumberSequenceKeypoint.new(1,1)
 				})
 				Gradient.Color = ColorSequence.new({
-					ColorSequenceKeypoint.new(0,Color3.fromRGB(0,155,255)),
+					ColorSequenceKeypoint.new(0,hotpink),
 					ColorSequenceKeypoint.new(1,Color3.fromRGB(40,40,40))
 				})
 				Gradient.Rotation = 180
@@ -1373,7 +1374,7 @@ function UILib:CreateUI(toggleKeyCode)
 				
 				Frame.MouseEnter:Connect(function()
 					isHovering = true
-					game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+					game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 				end)
 				Frame.MouseLeave:Connect(function()
 					isHovering = false
@@ -1384,7 +1385,7 @@ function UILib:CreateUI(toggleKeyCode)
 					if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 						Debounce = true
 						callback()
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						Frame:TweenSize(
 							UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 							Enum.EasingDirection.Out,
@@ -1486,7 +1487,7 @@ function UILib:CreateUI(toggleKeyCode)
 					NumberSequenceKeypoint.new(1,1)
 				})
 				Gradient.Color = ColorSequence.new({
-					ColorSequenceKeypoint.new(0,Color3.fromRGB(0,155,255)),
+					ColorSequenceKeypoint.new(0,hotpink),
 					ColorSequenceKeypoint.new(1,Color3.fromRGB(40,40,40))
 				})
 				Gradient.Rotation = -180
@@ -1494,7 +1495,7 @@ function UILib:CreateUI(toggleKeyCode)
 				UICorner_3.Parent = Overlay
 
 				Overlay.Size = (isToggled and UDim2.new(1, 0, 1, 0)) or UDim2.new(0, 0, 1, 0)
-				UIStroke.Color = (isToggled and Color3.fromRGB(0,155,255)) or Color3.fromRGB(50,50,50)
+				UIStroke.Color = (isToggled and hotpink) or Color3.fromRGB(50,50,50)
 
 				local toggled = isToggled
 				local toggleDB = false
@@ -1526,7 +1527,7 @@ function UILib:CreateUI(toggleKeyCode)
 									toggleDB = false
 								end
 							)
-							game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(0,155,255)}):Play()
+							game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=hotpink}):Play()
 						end
 						callback(isToggled)
 					end
@@ -1914,7 +1915,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 						Frame.MouseEnter:Connect(function()
 							isHovering = true
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						end)
 						Frame.MouseLeave:Connect(function()
 							isHovering = false
@@ -1924,7 +1925,7 @@ function UILib:CreateUI(toggleKeyCode)
 						Frame.InputBegan:Connect(function(Input)
 							if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 								Debounce = true
-								game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+								game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 								Frame:TweenSize(
 									UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 									Enum.EasingDirection.Out,
@@ -2262,7 +2263,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 						Frame.MouseEnter:Connect(function()
 							isHovering = true
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						end)
 						Frame.MouseLeave:Connect(function()
 							isHovering = false
@@ -2273,7 +2274,7 @@ function UILib:CreateUI(toggleKeyCode)
 							if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 								Debounce = true
 								
-								game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+								game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 								Frame:TweenSize(
 									UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 									Enum.EasingDirection.Out,
@@ -2477,7 +2478,7 @@ function UILib:CreateUI(toggleKeyCode)
 						NumberSequenceKeypoint.new(1,1)
 					})
 					Gradient.Color = ColorSequence.new({
-						ColorSequenceKeypoint.new(0,Color3.fromRGB(0,155,255)),
+						ColorSequenceKeypoint.new(0,hotpink),
 						ColorSequenceKeypoint.new(1,Color3.fromRGB(40,40,40))
 					})
 					Gradient.Rotation = 180
@@ -2769,7 +2770,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 					Frame.MouseEnter:Connect(function()
 						isHovering = true
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 					end)
 					Frame.MouseLeave:Connect(function()
 						isHovering = false
@@ -2780,7 +2781,7 @@ function UILib:CreateUI(toggleKeyCode)
 						if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 							Debounce = true
 							callback()
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(0,155,255)}):Play()
+							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 							Frame:TweenSize(
 								UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 								Enum.EasingDirection.Out,
@@ -2880,7 +2881,7 @@ function UILib:CreateUI(toggleKeyCode)
 						NumberSequenceKeypoint.new(1,1)
 					})
 					Gradient.Color = ColorSequence.new({
-						ColorSequenceKeypoint.new(0,Color3.fromRGB(0,155,255)),
+						ColorSequenceKeypoint.new(0,hotpink),
 						ColorSequenceKeypoint.new(1,Color3.fromRGB(40,40,40))
 					})
 					Gradient.Rotation = -180
@@ -2889,7 +2890,7 @@ function UILib:CreateUI(toggleKeyCode)
 					local UIStroke = Instance.new("UIStroke", Frame)
 
 					Overlay.Size = (isToggled and UDim2.new(1, 0, 1, 0)) or UDim2.new(0, 0, 1, 0)
-					UIStroke.Color = (isToggled and Color3.fromRGB(0,155,255)) or Color3.fromRGB(50,50,50)
+					UIStroke.Color = (isToggled and hotpink) or Color3.fromRGB(50,50,50)
 					
 					local toggleIsOn = isToggled or false
 					local DBx = false
@@ -2903,7 +2904,7 @@ function UILib:CreateUI(toggleKeyCode)
 							end
 							if toggleIsOn then
 								Overlay:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.Out, Enum.EasingStyle.Sine, .1, true, function() DBx = false; callback(toggleIsOn) end)
-								game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(0,155,255)}):Play()
+								game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=hotpink}):Play()
 							else
 								Overlay:TweenSize(UDim2.new(0,0,1,0), Enum.EasingDirection.Out, Enum.EasingStyle.Sine, .1, true, function() DBx = false; callback(toggleIsOn) end)
 								game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(50,50,50)}):Play()
