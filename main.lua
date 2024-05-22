@@ -215,18 +215,8 @@ function UILib:CreateUI(toggleKeyCode)
 	ImageLabel.BorderSizePixel = 0
 	ImageLabel.Position = UDim2.new(0.155485526, 0, 0.0275019091, 0)
 	ImageLabel.Size = UDim2.new(0.674392283, 0, 0.190794498, 0)
-	local frames = {}
-	for i=1,5 do
-		frames[i] = getcustomasset(string.format("dougware/frames/%s.jpg",i),true)
-	end
-	task.spawn(function()
-		while task.wait() do
-			for i,v in frames do
-				task.wait(0.1)
-				ImageLabel.Image = frames[i]
-			end	
-		end
-	end)
+	ImageLabel.Image = getcustomasset("dougware/logo.jpg")
+	
 	local ScrollHolder = Instance.new("Frame")
 	ScrollHolder.Parent = Sidebar
 	ScrollHolder.Active = true
