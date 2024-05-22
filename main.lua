@@ -239,7 +239,6 @@ function UILib:CreateUI(toggleKeyCode)
 
 	UICorner.Parent = Frame
 
-	Background.Name = "Background"
 	Background.Parent = Frame
 	Background.BackgroundColor3 = Color3.new(1, 1, 1)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
