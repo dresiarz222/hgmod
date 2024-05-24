@@ -240,6 +240,7 @@ function UILib:CreateUI(toggleKeyCode)
 	UICorner.Parent = Frame
 
 	Background.Parent = Frame
+	Background.Name = "penisgagagagagagaga"
 	Background.BackgroundColor3 = Color3.new(1, 1, 1)
 	Background.BorderColor3 = Color3.new(0, 0, 0)
 	Background.BorderSizePixel = 0
@@ -277,6 +278,7 @@ function UILib:CreateUI(toggleKeyCode)
 	FlatEdge.ZIndex = -1
 
 	ImageLabel.Parent = Sidebar
+	ImageLabel.Name = "niggertitscuntpee"
 	ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
 	ImageLabel.BackgroundTransparency = 1
 	ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
