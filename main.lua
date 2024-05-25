@@ -1454,6 +1454,7 @@ function UILib:CreateUI(toggleKeyCode)
 					if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 						Debounce = true
 						callback()
+						setthreadidentity(2)
 						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						Frame:TweenSize(
 							UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
