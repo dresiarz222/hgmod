@@ -180,7 +180,7 @@ function UILib:CreateUI(toggleKeyCode)
 	local function update(input)
 		local delta = input.Position - dragStart
 		local NewPos = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X / Scaleable.Scale, startPos.Y.Scale, startPos.Y.Offset + delta.Y / Scaleable.Scale)
-		TweenService:Create(Frame, TweenInfo.new(MovementTweenTime), {Position=NewPos}):Play()
+		Frame.Position = NewPos
 	end
 
 	Frame.InputBegan:Connect(function(input)
