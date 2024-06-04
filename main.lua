@@ -131,7 +131,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 	function Window:SetScale(Scale, Tween)
 		if Tween then
-			game.TweenService:Create(
+			TweenService:Create(
 				Scaleable,
 				Tween,
 				{Scale = Scale}
@@ -180,7 +180,7 @@ function UILib:CreateUI(toggleKeyCode)
 	local function update(input)
 		local delta = input.Position - dragStart
 		local NewPos = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X / Scaleable.Scale, startPos.Y.Scale, startPos.Y.Offset + delta.Y / Scaleable.Scale)
-		game.TweenService:Create(Frame, TweenInfo.new(MovementTweenTime), {Position=NewPos}):Play()
+		TweenService:Create(Frame, TweenInfo.new(MovementTweenTime), {Position=NewPos}):Play()
 	end
 
 	Frame.InputBegan:Connect(function(input)
@@ -640,7 +640,8 @@ function UILib:CreateUI(toggleKeyCode)
 								DB=false
 							end
 						)
-						game.TweenService:Create(dropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
+						dropdownArrow.Rotation = 0
+						--TweenService:Create(dropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
 					else
 						sectionIsOpen = true
 						DropDown.BackgroundTransparency = 0
@@ -655,7 +656,8 @@ function UILib:CreateUI(toggleKeyCode)
 								DB=false
 							end
 						)
-						game.TweenService:Create(dropdownArrow, TweenInfo.new(.1), {Rotation=180}):Play()
+						dropdownArrow.Rotation = 180
+						--TweenService:Create(dropdownArrow, TweenInfo.new(.1), {Rotation=180}):Play()
 					end
 				end
 			end)
@@ -799,7 +801,8 @@ function UILib:CreateUI(toggleKeyCode)
 									UpdateParentSize()
 								end
 							)
-							game.TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
+							NestedDropdownArrow.Rotation = 0
+							--TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
 						else
 							sectionIsOpen = true
 							NestedDropDown.BackgroundTransparency = 0
@@ -814,8 +817,8 @@ function UILib:CreateUI(toggleKeyCode)
 									UpdateParentSize()
 								end
 							)
-
-							game.TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=180}):Play()
+							NestedDropdownArrow.Rotation = 180
+							--TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=180}):Play()
 						end
 					end
 				end)
@@ -889,17 +892,20 @@ function UILib:CreateUI(toggleKeyCode)
 					
 					Frame.MouseEnter:Connect(function()
 						isHovering = true
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+						UIStroke.Color = hotpink
+						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 					end)
 					Frame.MouseLeave:Connect(function()
 						isHovering = false
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+						UIStroke.Color = Color3.fromRGB(50,50,50)
+						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 					end)
 					
 					Frame.InputBegan:Connect(function(Input)
 						if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 							Debounce = true
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+							UIStroke.Color = hotpink
+							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 							Frame:TweenSize(
 								UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 								Enum.EasingDirection.Out,
@@ -908,7 +914,8 @@ function UILib:CreateUI(toggleKeyCode)
 								false,
 								function()
 									if not isHovering then
-										game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+										UIStroke.Color =Color3.fromRGB(50,50,50)
+										--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 									end
 									Frame:TweenSize(
 										UDim2.new(0.271149337, 0, 0.75, 0),
@@ -931,7 +938,8 @@ function UILib:CreateUI(toggleKeyCode)
 								end
 							)
 							NestedDropdownTitle.Text = placeholderTitle..": "..v
-							game.TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
+							NestedDropdownArrow.Rotation = 0
+							--TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
 							task.delay(TweenTime*2, function()
 								Debounce = false
 							end)
@@ -1443,19 +1451,21 @@ function UILib:CreateUI(toggleKeyCode)
 				
 				Frame.MouseEnter:Connect(function()
 					isHovering = true
-					game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+					UIStroke.Color = hotpink
+					--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 				end)
 				Frame.MouseLeave:Connect(function()
 					isHovering = false
-					game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+					UIStroke.Color = Color3.fromRGB(50,50,50)
+					--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 				end)
 				
 				Frame.InputBegan:Connect(function(Input)
 					if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 						Debounce = true
 						callback()
-						setthreadidentity(2)
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+						UIStroke.Color = hotpink
+						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						Frame:TweenSize(
 							UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 							Enum.EasingDirection.Out,
@@ -1464,7 +1474,8 @@ function UILib:CreateUI(toggleKeyCode)
 							false,
 							function()
 								if not isHovering then
-									game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+									UIStroke.Color = Color3.fromRGB(50,50,50)
+									--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 								end
 								Frame:TweenSize(
 									UDim2.new(0.271149337, 0, 0.75, 0),
@@ -1584,7 +1595,8 @@ function UILib:CreateUI(toggleKeyCode)
 									toggleDB = false
 								end
 							)
-							game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(50,50,50)}):Play()
+							UIStroke.Color = Color3.fromRGB(50,50,50)
+							--TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(50,50,50)}):Play()
 						else
 							isToggled = true
 							Overlay:TweenSize(
@@ -1597,7 +1609,8 @@ function UILib:CreateUI(toggleKeyCode)
 									toggleDB = false
 								end
 							)
-							game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=hotpink}):Play()
+							UIStroke.Color = hotpink
+							--TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=hotpink}):Play()
 						end
 						callback(isToggled)
 					end
@@ -1735,7 +1748,8 @@ function UILib:CreateUI(toggleKeyCode)
 									UpdateParentSize()
 								end
 							)
-							game.TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
+							NestedDropdownArrow.Rotation = 0
+							--TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=0}):Play()
 						else
 							sectionIsOpen = true
 							NestedDropDown.BackgroundTransparency = 0
@@ -1749,8 +1763,8 @@ function UILib:CreateUI(toggleKeyCode)
 									UpdateParentSize()
 								end
 							)
-
-							game.TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=180}):Play()
+							NestedDropdownArrow.Rotation = 180
+							--TweenService:Create(NestedDropdownArrow, TweenInfo.new(.1), {Rotation=180}):Play()
 						end
 					end
 				end)
@@ -1896,7 +1910,8 @@ function UILib:CreateUI(toggleKeyCode)
 										UpdateParentSizeX()
 									end
 								)
-								game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
+								NestedDropdownArrowX.Rotation = 0
+								--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
 							else
 								dropdownIsOpen = true
 								NestedDropDownX.BackgroundTransparency = 0
@@ -1910,8 +1925,8 @@ function UILib:CreateUI(toggleKeyCode)
 										UpdateParentSizeX()
 									end
 								)
-
-								game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=180}):Play()
+								NestedDropdownArrowX.Rotation = 180
+								--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=180}):Play()
 							end
 						end
 					end)
@@ -1985,17 +2000,20 @@ function UILib:CreateUI(toggleKeyCode)
 
 						Frame.MouseEnter:Connect(function()
 							isHovering = true
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+							UIStroke.Color = hotpink
+							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						end)
 						Frame.MouseLeave:Connect(function()
 							isHovering = false
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+							UIStroke.Color = Color3.fromRGB(50,50,50)
+							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 						end)
 
 						Frame.InputBegan:Connect(function(Input)
 							if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 								Debounce = true
-								game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+								UIStroke.Color = hotpink
+								--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 								Frame:TweenSize(
 									UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 									Enum.EasingDirection.Out,
@@ -2004,7 +2022,8 @@ function UILib:CreateUI(toggleKeyCode)
 									false,
 									function()
 										if not isHovering then
-											game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+											UIStroke.Color = Color3.fromRGB(50,50,50)
+											--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 										end
 										Frame:TweenSize(
 											UDim2.new(0.271149337, 0, 0.75, 0),
@@ -2027,7 +2046,8 @@ function UILib:CreateUI(toggleKeyCode)
 									end
 								)
 								NestedDropdownTitleX.Text = placeholderTitle..": "..v
-								game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
+								NestedDropdownArrowX.Rotation = 0
+								--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
 								task.delay(TweenTime*2, function()
 									Debounce = false
 								end)
@@ -2224,7 +2244,8 @@ function UILib:CreateUI(toggleKeyCode)
 								UpdateParentSizeX()
 							end
 						)
-						game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=180}):Play()
+						NestedDropdownArrowX.Rotation = 180
+						--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=180}):Play()
 					end
 					Button.MouseButton1Click:Connect(function()
 						if not DB then
@@ -2243,7 +2264,8 @@ function UILib:CreateUI(toggleKeyCode)
 										UpdateParentSizeX()
 									end
 								)
-								game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
+								NestedDropdownArrowX.Rotation = 0
+								--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
 							else
 								dropdownIsOpen = true
 								NestedDropDownX.BackgroundTransparency = 0
@@ -2257,7 +2279,8 @@ function UILib:CreateUI(toggleKeyCode)
 										UpdateParentSizeX()
 									end
 								)
-								game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=180}):Play()
+								NestedDropdownArrowX.Rotation = 180
+								--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=180}):Play()
 							end
 						end
 					end)
@@ -2333,18 +2356,20 @@ function UILib:CreateUI(toggleKeyCode)
 
 						Frame.MouseEnter:Connect(function()
 							isHovering = true
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+							UIStroke.Color = hotpink
+							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 						end)
 						Frame.MouseLeave:Connect(function()
 							isHovering = false
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+							UIStroke.Color = Color3.fromRGB(50,50,50)
+							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 						end)
 
 						Frame.InputBegan:Connect(function(Input)
 							if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 								Debounce = true
-								
-								game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+								UIStroke.Color = hotpink
+								--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 								Frame:TweenSize(
 									UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 									Enum.EasingDirection.Out,
@@ -2353,7 +2378,8 @@ function UILib:CreateUI(toggleKeyCode)
 									false,
 									function()
 										if not isHovering then
-											game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+											UIStroke.Color = Color3.fromRGB(50,50,50)
+											--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 										end
 										Frame:TweenSize(
 											UDim2.new(0.271149337, 0, 0.75, 0),
@@ -2376,7 +2402,8 @@ function UILib:CreateUI(toggleKeyCode)
 									end
 								)
 								NestedDropdownTitleX.Text = placeholderTitle..": "..v
-								game.TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
+								NestedDropdownArrowX.Rotation = 0
+								--TweenService:Create(NestedDropdownArrowX, TweenInfo.new(.1), {Rotation=0}):Play()
 								task.delay(TweenTime*2, function()
 									Debounce = false
 								end)
@@ -2840,18 +2867,21 @@ function UILib:CreateUI(toggleKeyCode)
 
 					Frame.MouseEnter:Connect(function()
 						isHovering = true
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+						UIStroke.Color = hotpink
+						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 					end)
 					Frame.MouseLeave:Connect(function()
 						isHovering = false
-						game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+						UIStroke.Color = Color3.fromRGB(50,50,50)
+						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 					end)
 
 					Frame.InputBegan:Connect(function(Input)
 						if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 							Debounce = true
 							callback()
-							game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
+							UIStroke.Color = hotpink
+							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
 							Frame:TweenSize(
 								UDim2.new(0.271149337*Mult, 0, 0.75*Mult, 0),
 								Enum.EasingDirection.Out,
@@ -2860,7 +2890,8 @@ function UILib:CreateUI(toggleKeyCode)
 								false,
 								function()
 									if not isHovering then
-										game.TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
+										UIStroke.Color = Color3.fromRGB(50,50,50)
+										--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=Color3.fromRGB(50,50,50)}):Play()
 									end
 									Frame:TweenSize(
 										UDim2.new(0.271149337, 0, 0.75, 0),
@@ -2974,10 +3005,12 @@ function UILib:CreateUI(toggleKeyCode)
 							end
 							if toggleIsOn then
 								Overlay:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.Out, Enum.EasingStyle.Sine, .1, true, function() DBx = false; callback(toggleIsOn) end)
-								game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=hotpink}):Play()
+								UIStroke.Color = hotpink
+								--TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=hotpink}):Play()
 							else
 								Overlay:TweenSize(UDim2.new(0,0,1,0), Enum.EasingDirection.Out, Enum.EasingStyle.Sine, .1, true, function() DBx = false; callback(toggleIsOn) end)
-								game.TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(50,50,50)}):Play()
+								UIStroke.Color = Color3.fromRGB(50,50,50)
+								--TweenService:Create(UIStroke, TweenInfo.new(.1), {Color=Color3.fromRGB(50,50,50)}):Play()
 							end
 						end
 					end
