@@ -1389,7 +1389,7 @@ function UILib:CreateUI(toggleKeyCode)
 				local Title = Instance.new("TextLabel")
 				local Frame = Instance.new("Frame")
 				local UICorner_2 = Instance.new("UICorner")
-				local TextLabel = Instance.new("TextLabel")
+				local TextLabel1 = Instance.new("TextLabel")
 
 				Toggle.Name = "Toggle"
 				Toggle.Parent = DropDown
@@ -1429,18 +1429,18 @@ function UILib:CreateUI(toggleKeyCode)
 
 				UICorner_2.Parent = Frame
 
-				TextLabel.Parent = Frame
-				TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-				TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-				TextLabel.BackgroundTransparency = 1
-				TextLabel.BorderColor3 = Color3.new(0, 0, 0)
-				TextLabel.BorderSizePixel = 0
-				TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-				TextLabel.Size = UDim2.new(1, 0, 0.5, 0)
-				TextLabel.Font = Enum.Font.FredokaOne
-				TextLabel.Text = ButtonText
-				TextLabel.TextColor3 = Color3.new(0.686275, 0.686275, 0.686275)
-				TextLabel.TextSize = 14
+				TextLabel1.Parent = Frame
+				TextLabel1.AnchorPoint = Vector2.new(0.5, 0.5)
+				TextLabel1.BackgroundColor3 = Color3.new(1, 1, 1)
+				TextLabel1.BackgroundTransparency = 1
+				TextLabel1.BorderColor3 = Color3.new(0, 0, 0)
+				TextLabel1.BorderSizePixel = 0
+				TextLabel1.Position = UDim2.new(0.5, 0, 0.5, 0)
+				TextLabel1.Size = UDim2.new(1, 0, 0.5, 0)
+				TextLabel1.Font = Enum.Font.FredokaOne
+				TextLabel1.Text = ButtonText
+				TextLabel1.TextColor3 = Color3.new(0.686275, 0.686275, 0.686275)
+				TextLabel1.TextSize = 14
 
 				local UIStroke = Instance.new("UIStroke", Frame)
 				UIStroke.Color = Color3.fromRGB(50,50,50)
