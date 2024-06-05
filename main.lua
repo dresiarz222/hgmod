@@ -1463,6 +1463,7 @@ function UILib:CreateUI(toggleKeyCode)
 				Frame.InputBegan:Connect(function(Input)
 					if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 						Debounce = true
+						setthreadidentity(6)
 						callback()
 						UIStroke.Color = hotpink
 						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
@@ -2879,6 +2880,7 @@ function UILib:CreateUI(toggleKeyCode)
 					Frame.InputBegan:Connect(function(Input)
 						if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 							Debounce = true
+							setthreadidentity(6)
 							callback()
 							UIStroke.Color = hotpink
 							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
