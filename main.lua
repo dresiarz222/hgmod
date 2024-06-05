@@ -7,20 +7,15 @@
 local TweenService = cloneref(game:GetService("TweenService"))
 
 local ponyBgs = {
-	"https://files.catbox.moe/kk24r5.png",
-	"https://files.catbox.moe/859um2.jpg",
-	"https://files.catbox.moe/2m655r.jpg",
-	"https://files.catbox.moe/q6cgen.jpg",
-	"https://files.catbox.moe/q8v91u.jpg",
-	"https://files.catbox.moe/m69p0r.jpg",
+	"https://files.catbox.moe/2jb4cl.png",
 }
 
 local links = {
 	cod = "https://files.catbox.moe/pdtjrs.wav",
 	coin = "https://files.catbox.moe/a7mc2i.wav",
 	skeet = "https://files.catbox.moe/lc9xn9.wav",
-	bg = ponyBgs[math.random(1,6)], -- random pony
-	logo = "https://files.catbox.moe/3giqnn.png"
+	bg = ponyBgs[math.random(1,#ponyBgs)], -- random pony
+	logo = "https://i.imgur.com/1qEuBM5.jpeg"
 }
 
 function checkFile(path, link)
