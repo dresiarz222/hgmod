@@ -1,4 +1,4 @@
-
+setthreadidentity(6)
 -- UI v2
 -- Dropdowns + DropDowns Within Nested Sections (Yay)
 -- discord.gg/hugegames
@@ -1390,7 +1390,7 @@ function UILib:CreateUI(toggleKeyCode)
 				local Frame = Instance.new("Frame")
 				local UICorner_2 = Instance.new("UICorner")
 				local TextLabel1 = Instance.new("TextLabel")
-
+				setthreadidentity(6)
 				Toggle.Name = "Toggle"
 				Toggle.Parent = DropDown
 				Toggle.AnchorPoint = Vector2.new(0.5, 0)
@@ -1496,6 +1496,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 			function Section:Toggle(ToggleTitle, isToggled, callback, Extra)
 				--local isToggled = not isToggled
+				setthreadidentity(6)
 				local Extra = Extra or {}
 				local Toggle = Instance.new("Frame")
 				table.insert(sectionedElements, Toggle)
@@ -1506,7 +1507,6 @@ function UILib:CreateUI(toggleKeyCode)
 				local UICorner_2 = Instance.new("UICorner")
 				local Overlay = Instance.new("Frame")
 				local UICorner_3 = Instance.new("UICorner")
-
 				Toggle.Name = "Toggle"
 				Toggle.Parent = DropDown
 				Toggle.AnchorPoint = Vector2.new(0.5, 0)
