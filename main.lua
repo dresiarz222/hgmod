@@ -1,4 +1,4 @@
-setthreadidentity(6)
+
 -- UI v2
 -- Dropdowns + DropDowns Within Nested Sections (Yay)
 -- discord.gg/hugegames
@@ -1390,7 +1390,7 @@ function UILib:CreateUI(toggleKeyCode)
 				local Frame = Instance.new("Frame")
 				local UICorner_2 = Instance.new("UICorner")
 				local TextLabel1 = Instance.new("TextLabel")
-				setthreadidentity(6)
+				
 				Toggle.Name = "Toggle"
 				Toggle.Parent = DropDown
 				Toggle.AnchorPoint = Vector2.new(0.5, 0)
@@ -1463,7 +1463,7 @@ function UILib:CreateUI(toggleKeyCode)
 				Frame.InputBegan:Connect(function(Input)
 					if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 						Debounce = true
-						setthreadidentity(6)
+						
 						callback()
 						UIStroke.Color = hotpink
 						--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
@@ -1496,7 +1496,7 @@ function UILib:CreateUI(toggleKeyCode)
 
 			function Section:Toggle(ToggleTitle, isToggled, callback, Extra)
 				--local isToggled = not isToggled
-				setthreadidentity(6)
+				
 				local Extra = Extra or {}
 				local Toggle = Instance.new("Frame")
 				table.insert(sectionedElements, Toggle)
@@ -2880,7 +2880,7 @@ function UILib:CreateUI(toggleKeyCode)
 					Frame.InputBegan:Connect(function(Input)
 						if (Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch) and Input.UserInputState == Enum.UserInputState.Begin and (not Debounce) then		
 							Debounce = true
-							setthreadidentity(6)
+							
 							callback()
 							UIStroke.Color = hotpink
 							--TweenService:Create(UIStroke, TweenInfo.new(TweenTime), {Color=hotpink}):Play()
